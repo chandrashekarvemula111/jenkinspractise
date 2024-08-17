@@ -4,18 +4,10 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Hello Build sucessfull'
+                sh '''
+                    docker --version
+                '''
             }
-        }
-        stage('Test') {
-            steps {
-                echo 'Hello Test successfull'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Hello Deploy successfull'
-            }
-        }        
+        }      
     }
 }
