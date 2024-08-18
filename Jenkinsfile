@@ -2,10 +2,12 @@ pipeline {
     agent any
 
     stages {
-        stage ('connect') {
-            agent 
+        stage ('AWS') {
+            agent {
                 docker {
-                    image 'amazon/aws-cli:latest'
+                image 'amazon/aws-cli:latest'
+            }
+
             }
         }
         stage('Build') {
