@@ -10,7 +10,13 @@ pipeline {
                     
                 '''
             }
-        } 
+        }
+        stage('approval') {
+            steps {
+                input message: 'deploy to dev', ok: 'ok'
+            }
+        }         
+
         stage('deploy') {
             steps {
                 sh '''
